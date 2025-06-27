@@ -35,6 +35,9 @@ def __ask_for_students_record(value_names) -> list:
 
     Returns:
         list: A list of values entered by the user, corresponding to the requested names.
+
+    Returns example:
+        ['Roberta Samper Aznar', 'Matemática', '10', '3', '4']
     """
     values_list = list()
     for value_name in value_names:
