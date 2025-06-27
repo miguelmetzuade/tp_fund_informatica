@@ -24,7 +24,7 @@ def update_hits_data_csv(filename: str, data: list) -> None:
         filename (str): The name of the CSV file.
         data (list): The updated data to write to the file.
     """
-    filename = f"./data/{filename}"
+    filename = f"./data_output/{filename}"
     columns = data[0]
     if not file_exists(filename):
         create_file_with_columns(columns, filename)
