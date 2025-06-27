@@ -9,7 +9,7 @@ except (ImportError, ModuleNotFoundError):
 from handler_files.csv_manager import read_csv_as_matrix
 
 
-def __get_historical_data(file_path: str) -> list:
+def __get_historical_data(filename: str) -> list:
     """Retrieves historical data from a CSV file.
 
     Args:
@@ -18,7 +18,8 @@ def __get_historical_data(file_path: str) -> list:
     Returns:
         list: A list of lists representing the CSV file content.
     """
-    content = read_csv_as_matrix(file_path)
+    filename = f"./data_output/{filename}"
+    content = read_csv_as_matrix(filename)
     if not content:
         raise Exception(f"The file {file_path} is empty or does not contain valid data.")
     return content
