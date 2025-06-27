@@ -125,6 +125,7 @@ def append_data_to_file(filename: str, data: list) -> None:
     """
     with open(filename, 'a', encoding='utf-8') as file:
         for student_data in data[1:]: # Skip header
+            student_data = [ str(item).strip() for item in student_data ]
             line = ','.join(student_data)
             file.write(line + '\n')
 

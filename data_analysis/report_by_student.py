@@ -80,9 +80,12 @@ def show_report_for_student(student_name: str) -> None:
     Args:
         student_name (str): The name of the student to generate the report for.
     """
-    data = __get_historical_data("students_scores_hist.csv")
+    data = __get_historical_data("alumnos_test_003.csv")
     data = __filter_data_by_student(data, student_name)
     if not data:
         print(f"No data found for student: {student_name}")
         return
     __display_report(data, student_name)
+
+
+show_report_for_student(student_name="Juanita Graciela Torralba Castell")

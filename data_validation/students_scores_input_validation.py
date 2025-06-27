@@ -11,7 +11,7 @@ def validate_student_row(row):
     #Formato esperado: Nombre, Materia, Nota1, Nota2, Nota3, NotaFinal
     #Devuelve (True, "") si es válida, o (False, mensaje de error).
     
-    if len(row) != 6:
+    if len(row) != 5:
         return False, f"Cantidad incorrecta de columnas: {row}"
 
     nombre, materia, *notas = row
@@ -20,24 +20,27 @@ def validate_student_row(row):
         if not is_valid_score(nota):
             return False, f"Nota inválida en columna {i+3}: {nota}"
 
-    # Validación opcional: verificar que NotaFinal sea el promedio correcto
-    try:
-        nota1, nota2, nota3, nota_final = map(float, notas)
-        promedio = round((nota1 + nota2 + nota3) / 3, 2)
-        if round(nota_final, 2) != promedio:
-            return False, f"Nota final incorrecta. Esperado {promedio}, encontrado {nota_final}."
-    except ValueError:
-        return False, f"Error convirtiendo notas a número en: {row}"
+    # # Validación opcional: verificar que NotaFinal sea el promedio correcto
+    # try:
+    #     nota1, nota2, nota3, nota_final = map(float, notas)
+    #     promedio = round((nota1 + nota2 + nota3) / 3, 2)
+    #     if round(nota_final, 2) != promedio:
+    #         return False, f"Nota final incorrecta. Esperado {promedio}, encontrado {nota_final}."
+    # except ValueError:
+    #     return False, f"Error convirtiendo notas a número en: {row} -- {}"
 
     return True, ""
 
 def validate_all_students(data):
     #Valida todas las filas de una lista de estudiantes (lista de listas).
     #Devuelve dos listas: válidos y errores.
-    validos = []
-    errores = []
+    cols = data[0]
+    validos = [ cols ]
+    errores = [ cols ]
 
     for i, row in enumerate(data):
+        if i == 0:
+            continue
         valido, mensaje = validate_student_row(row)
         if valido:
             validos.append(row)
