@@ -26,3 +26,34 @@ Nombre,Materia,Nota1,Nota2,Nota3,NotaFinal
   - Por nota final (de mayor a menor).
 
 ---
+
+## Organización del código
+Usar funciones para cada operación (carga de CSV, carga manual, informes, ordenamiento).
+
+Validar los datos ingresados (por ejemplo, que las notas estén entre 0 y 10).
+
+Comentar el código explicando cada bloque funcional.
+
+---
+
+## Calificación:
+Rúbrica de Calificación
+
+Puntaje Total: 10 puntos
+
+| Criterio                                    | Puntaje |
+| ------------------------------------------- | ------- |
+| Carga desde archivo CSV                     | 1.0     |
+| Carga manual de datos                       | 1.0     |
+| Implementación de 5 informes                | 2.0     |
+| Aplicación de dos métodos de ordenamiento   | 2.0     |
+| Organización del código en funciones        | 1.0     |
+| Presentación clara y documentación          | 1.0     |
+| Participación individual en la presentación | 1.0     |
+
+
+### Bonificaciones
+- Bonus 1 (0.5 pts): uso de archivos JSON para guardar configuraciones o resultados.
+- Bonus 2 (0.5 pts): interfaz gráfica simple (puede ser con tkinter, PySimpleGUI, etc.).
+
+---
