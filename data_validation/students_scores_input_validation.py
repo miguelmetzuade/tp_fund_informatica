@@ -1,5 +1,5 @@
 def is_valid_score(score):
-    """Verifica si una nota está entre 0 y 10."""
+    #Verifica si una nota está entre 0 y 10.
     try:
         score = float(score)
         return 0 <= score <= 10
@@ -7,11 +7,10 @@ def is_valid_score(score):
         return False
 
 def validate_student_row(row):
-    """
-    Valida una fila del archivo CSV.
-    Formato esperado: Nombre, Materia, Nota1, Nota2, Nota3, NotaFinal
-    Retorna (True, "") si es válida, o (False, mensaje de error).
-    """
+    #Valida una fila del archivo CSV.
+    #Formato esperado: Nombre, Materia, Nota1, Nota2, Nota3, NotaFinal
+    #Devuelve (True, "") si es válida, o (False, mensaje de error).
+    
     if len(row) != 6:
         return False, f"Cantidad incorrecta de columnas: {row}"
 
@@ -33,10 +32,8 @@ def validate_student_row(row):
     return True, ""
 
 def validate_all_students(data):
-    """
-    Valida todas las filas de una lista de estudiantes (lista de listas).
-    Devuelve dos listas: válidos y errores.
-    """
+    #Valida todas las filas de una lista de estudiantes (lista de listas).
+    #Devuelve dos listas: válidos y errores.
     validos = []
     errores = []
 
@@ -66,4 +63,3 @@ if __name__ == "__main__":
     print("\n Errores:")
     for line, error in errors:
         print(f"Fila {line}: {error}")
-
