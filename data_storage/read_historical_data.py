@@ -1,5 +1,5 @@
 try:
-    from handler_files.csv_manager import confread_csv_as_matrixig
+    from handler_files.csv_manager import read_csv_as_matrix
 except (ImportError, ModuleNotFoundError):
     import os
     import sys
@@ -21,5 +21,5 @@ def __get_historical_data(filename: str) -> list:
     filename = f"./data_output/{filename}"
     content = read_csv_as_matrix(filename)
     if not content:
-        raise Exception(f"The file {file_path} is empty or does not contain valid data.")
+        raise Exception(f"The file {filename} is empty or does not contain valid data.")
     return content
