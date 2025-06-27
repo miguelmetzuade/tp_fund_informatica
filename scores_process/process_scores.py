@@ -1,4 +1,13 @@
+try:
+    from data_ingestion.students_scores_from_csv import read_scores_from_csv
+except (ImportError, ModuleNotFoundError):
+    import os
+    import sys
+    path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    sys.path.insert(1, path)
+
 from data_ingestion.students_scores_from_csv import read_scores_from_csv
+
 
 def calcular_nota_final(matriz):
     """
@@ -26,6 +35,7 @@ def calcular_nota_final(matriz):
         else:
             fila[5] = str(promedio)
     return matriz
+
 
 if __name__ == "__main__":
     path = "data_input/alumnos_test_001.csv"
