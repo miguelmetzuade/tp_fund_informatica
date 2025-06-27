@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# Archivos de configuración de VS Code
+.vscode/
+
+# Archivos temporales de tests y logs
+*.log
+*.tmp
+*.bak
+*.swp
+.cache/
+coverage.*
+.tox/
+.nox/
+.pytest_cache/
+
+# Archivos de salida o empaquetado
+dist/
+build/
+*.egg
+*.whl
+
+# Configuración de entornos
+*.env
+.env.*
+*.ini
+*.cfg
+
+# Archivos relacionados con Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# SQLite u otros archivos de base de datos locales
+*.sqlite3
+*.db
+
+# Archivos de lock
+poetry.lock
+Pipfile.lock
